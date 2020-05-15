@@ -17,12 +17,12 @@ include_directories(${OPENSSL_INCLUDE_DIR})
 # link_directories(C:\\mingw64\\opt\\lib)
 
 # 指定生成目标
-add_executable(LibcryptoTest test.cpp)
+add_executable(LibcryptoTest test.cpp encrypt.cpp)
 target_link_libraries(LibcryptoTest ${OPENSSL_CRYPTO_LIBRARY})
 
-add_executable(local local.cpp sock5.cpp)
+add_executable(local local.cpp sock5.cpp encrypt.cpp)
 target_link_libraries(local ${OPENSSL_CRYPTO_LIBRARY} libwsock32.a)
 
-add_executable(remote remote.cpp sock5.cpp)
+add_executable(remote remote.cpp sock5.cpp encrypt.cpp)
 target_link_libraries(remote ${OPENSSL_CRYPTO_LIBRARY} libwsock32.a)
 

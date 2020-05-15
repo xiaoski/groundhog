@@ -1,5 +1,8 @@
-#include <stdint.h>
+#ifndef __SOCK5_H__
+#define __SOCK5_H__
+
 #include <thread>
+#include "sock5.h"
 #ifdef _WIN32
 #include <winsock2.h>
 typedef in_addr in_addr_t;
@@ -98,6 +101,7 @@ typedef struct reply
     } bnd;
 } ST_CONN_RPL;
 
-void HexCode(unsigned char *data, int len);
 void handle_local(m_sock sockfd);
 void handle_remote(m_sock sockfd);
+
+#endif
